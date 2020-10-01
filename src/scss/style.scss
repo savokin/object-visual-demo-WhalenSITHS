@@ -38,8 +38,13 @@ body {
 .item-price {
 }
 .item-vegetarian {
+  color: green;
 }
 .item-in-stock {
+  color: green;
+}
+.item-out{
+  color: red;
 }
 .item-image {
   height: 18rem;

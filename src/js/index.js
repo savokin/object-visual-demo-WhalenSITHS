@@ -1,3 +1,5 @@
+const container = document.querySelector(".container");
+console.log(container);
 const menu = [
   {
     name: "Pizza Slice",
@@ -64,3 +66,34 @@ const menu = [
     inStock: true,
   },
 ];
+
+
+menu.forEach(m_disp);
+
+
+
+function m_disp(item){
+  var name  = item.name;
+  var veg = item.vegetarian;
+  var price = item.price;
+  
+  var img = item.img;
+  var inStock = item.inStock;
+
+  container.insertAdjacentHTML('beforeend', '<ul class = "item-list"></ul>');
+  list = document.querySelector(".item-list:last-child");
+  list.insertAdjacentHTML('beforeend', '<li class="item-name item-value">'  + name + '</li>');
+  list.insertAdjacentHTML('beforeend', '<li class="item-price item-value">'  + price + '</li>');
+  if(veg){
+    list.insertAdjacentHTML('beforeend', '<li class="item-vegetarian item-value">vegan</li>');
+  }
+  list.insertAdjacentHTML('beforeend', '<li class="item-image"> <img class = "item-image" src = '  + img + ' alt = "" /></li>');
+  if(inStock){
+    list.insertAdjacentHTML('beforeend', '<li class="item-in-stock item-value">in Stock?</li>');
+
+  }else{
+    list.insertAdjacentHTML('beforeend', '<li class="item-out item-value">in Stock?</li>');
+  }
+  
+}
+
